@@ -1,7 +1,12 @@
 using TicketsProxApi.Data;
 using Microsoft.EntityFrameworkCore;
 
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors();
 
 // Add services to the container.
 
@@ -10,8 +15,9 @@ builder.Services.AddControllers();
 var Default = builder.Configuration.GetConnectionString("Default");
 
 builder.Services.AddDbContext<Contexto>(options =>
-   options.UseSqlite(Default)
+   options.UseSqlServer(Default)
 );
+
 
 
 
@@ -22,13 +28,23 @@ builder.Services.AddScoped<Contexto, Contexto>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseCors(option =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    option.WithOrigins("http://localhost:5173");
+    option.AllowAnyMethod();
+    option.AllowAnyHeader();
 
+});
+
+// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
+//{
+   
+//}
+
+
+ app.UseSwagger();
+ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

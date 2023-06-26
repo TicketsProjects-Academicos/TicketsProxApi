@@ -15,8 +15,5 @@ namespace TicketsProxApi.Models
         public string? Identificacion { get; set; }
         public string? Correo { get; set; } 
         public string? Password { get; set; }
-
-        //public List<Tickets>? Tickets { get; set; }
-        //public List<CompraTickets>? CompraTickets { get; set; }
     }
 }

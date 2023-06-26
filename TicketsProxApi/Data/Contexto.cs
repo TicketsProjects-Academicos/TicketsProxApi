@@ -14,10 +14,11 @@ namespace TicketsProxApi.Data
         }
 
         public DbSet<Clientes> Clientes { get; set; }
-        public DbSet<CompraTickets> CompraTickets { get; set; }
+        public DbSet<Reservas> Reservas { get; set; }
         public DbSet<Eventos> Eventos { get; set; }
-        public DbSet<EventosCliente> EventosClientes { get; set; }
-        public DbSet<Tickets> Tickets { get; set; }
+        public DbSet<Secciones> Secciones { get; set; }
+        public DbSet<Asientos> Asientos { get; set; }
+        
 
     }
 }

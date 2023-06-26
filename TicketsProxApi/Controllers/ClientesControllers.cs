@@ -14,9 +14,9 @@ namespace TicketsProxApi.Controllers
     [ApiController]
     public class ClientesControllers : ControllerBase
     {
-        private readonly Contexto? _contexto;
+        private readonly Contexto _contexto;
 
-        public ClientesControllers(Contexto? contexto)
+        public ClientesControllers(Contexto contexto)
         {
             _contexto = contexto;
         }
