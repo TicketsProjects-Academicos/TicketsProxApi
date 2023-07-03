@@ -46,9 +46,11 @@ namespace TicketsProxApi.Controllers
             }
         }
 
+        //  public async Task<ActionResult<Articulos>> PostArticulos(Articulos articulos)
+
         // POST api/<ReservasController>
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<Reservas>>> PostReservas(Reservas reservas)
+        public async Task<ActionResult<Reservas>> PostReservas(Reservas reservas)
         {
             _contexto.Reservas.Add(reservas);
             await _contexto.SaveChangesAsync();

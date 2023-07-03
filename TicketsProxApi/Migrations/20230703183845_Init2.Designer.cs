@@ -12,7 +12,7 @@ using TicketsProxApi.Data;
 namespace TicketsProxApi.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20230625143633_Init2")]
+    [Migration("20230703183845_Init2")]
     partial class Init2
     {
         /// <inheritdoc />
