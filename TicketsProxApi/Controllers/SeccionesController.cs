@@ -44,13 +44,14 @@ namespace TicketsProxApi.Controllers
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Secciones>>> PostSeccion(Secciones secciones)
         {
-            
+
             _contexto.Secciones.Add(secciones);
             await _contexto.SaveChangesAsync();
 
             return CreatedAtAction("GetSecciones", new { id = secciones.IdSecciones }, secciones);
         }
 
+      
         // PUT api/<SeccionesController>/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSecciones(int id, Secciones seccion)
@@ -81,7 +82,7 @@ namespace TicketsProxApi.Controllers
             var seccion = await _contexto.Secciones.FindAsync(id);
 
             if (seccion == null)
-            {   
+            {
                 return NotFound();
             }
 

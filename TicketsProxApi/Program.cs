@@ -41,11 +41,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     };
 });
 
+
 var app = builder.Build();
 
 app.UseCors(option =>
 {
-    option.WithOrigins("http://localhost:5173");
+   option.WithOrigins("http://localhost:5173");
+  // option.WithOrigins("https://ticketssalesprox.netlify.app");
     //option.WithMethods("GET", "POST", "PUT");
      option.AllowAnyMethod();
     option.AllowAnyHeader();
@@ -56,13 +58,16 @@ app.UseCors(option =>
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
-   
+
 //}
+
+
 
 
  app.UseSwagger();
  app.UseSwaggerUI();
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
